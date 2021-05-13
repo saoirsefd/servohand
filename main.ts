@@ -6,15 +6,15 @@ radio.onReceivedString(function (receivedString) {
         blue = 0
     }
     if (receivedString == "blue up" && blue == 0) {
-        servos.P0.run(-50)
+        servos.P1.run(-50)
         basic.pause(100)
-        servos.P0.run(0)
+        servos.P1.run(0)
         blue = 1
     }
     if (receivedString == "green" && green == 1) {
-        servos.P0.run(50)
+        servos.P2.run(50)
         basic.pause(100)
-        servos.P0.run(0)
+        servos.P2.run(0)
         green = 0
     }
     if (receivedString == "green up" && green == 0) {
@@ -39,8 +39,8 @@ radio.onReceivedString(function (receivedString) {
         servos.P0.run(50)
         basic.pause(100)
         servos.P0.run(0)
-        basic.showString("o")
         orange = 0
+        basic.showNumber(orange)
     }
     if (receivedString == "orange up" && orange == 0) {
         servos.P0.run(-50)
@@ -48,6 +48,7 @@ radio.onReceivedString(function (receivedString) {
         servos.P0.run(0)
         basic.showString("u")
         orange = 1
+        basic.showNumber(orange)
     }
     if (receivedString == "red" && red == 1) {
         servos.P0.run(50)
